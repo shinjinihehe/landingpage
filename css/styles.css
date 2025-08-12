@@ -115,9 +115,11 @@ a:hover{ text-decoration: underline; }
   background: radial-gradient(closest-side, rgba(255,255,255,.08), rgba(255,255,255,0) 70%);
   transform: translate(20%, -10%);
 }
-.hero-grid{
-  display: grid; gap: 2rem;
+.hero-grid {
+  display: grid;
+  gap: 2rem;
   grid-template-columns: 1.05fr .95fr;
+  align-items: center; /* NEW - centers the text and image vertically */
 }
 @media (max-width: 900px){
   .hero-grid{ grid-template-columns: 1fr; }
@@ -172,12 +174,22 @@ a:hover{ text-decoration: underline; }
 
 /* hero media placeholder */
 .hero-media{ color: #C8D9F3; }
-.media-box{
+.media-box {
   background: linear-gradient(160deg, rgba(255,255,255,0.14), rgba(255,255,255,0.06));
   border: 1px solid rgba(255,255,255,.18);
-  border-radius: 16px; aspect-ratio: 16/10;
+  border-radius: 16px;
+  aspect-ratio: auto; /* allow image height to adjust naturally */
   box-shadow: 0 20px 60px rgba(0,0,0,.25);
-  position: relative; overflow: hidden;
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.media-box img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover; /* fills the container without squishing */
 }
 .media-box:after{
   content:""; position: absolute; inset: -20% -10% auto auto; height: 60%; width: 60%;
@@ -246,10 +258,18 @@ a:hover{ text-decoration: underline; }
   .pattern-3-2{ grid-template-columns: 1fr; }
 }
 /* Optional: center the two bottom cards under the 3 above */
-@media (min-width: 1024px){
-  .pattern-3-2.center-last-two > :nth-child(4){ grid-column: 1; }
-  .pattern-3-2.center-last-two > :nth-child(5){ grid-column: 3; }
+@media (min-width: 1024px) {
+  .pattern-3-2.center-last-two {
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+  }
+  .pattern-3-2.center-last-two > :nth-child(4),
+  .pattern-3-2.center-last-two > :nth-child(5) {
+    grid-column: auto;
+  }
 }
+
+
 
 /* ========== Testimonials ========== */
 .quote p{ font-size: 1.05rem; }
@@ -268,11 +288,32 @@ a:hover{ text-decoration: underline; }
 @media (max-width: 1000px){
   .contact-grid{ grid-template-columns: 1fr; }
 }
-.contact-actions{ display: flex; flex-wrap: wrap; gap: .75rem; margin: 1rem 0 1.25rem; }
-
-.offices{
-  display: grid; gap: 1rem; grid-template-columns: 1fr 1fr 280px;
+.contact-actions{
+display: grid;
+grid-template-columns: 1fr;
+gap: .75rem;
+margin: 1rem 0 1.25rem;
 }
+.contact-actions .btn svg{
+margin-right: .5rem;
+}
+.btn--block{
+width: 100%;
+justify-content: center;
+}
+
+.offices {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr 280px;
+}
+
+.contact-grid > .offices {
+  align-self: center; /* centers the entire right group in the row */
+}
+
+
+
 @media (max-width: 1100px){
   .offices{ grid-template-columns: 1fr; }
 }
@@ -328,4 +369,101 @@ a:hover{ text-decoration: underline; }
 }
 .hero .btn--ghost:hover {
   background: rgba(255,255,255,0.12);
+}
+
+/* Decorative illustrations inside 'concerns' cards */
+.card--icon{
+  position: relative;
+  overflow: hidden; /* clip the illustration inside the rounded card */
+}
+
+/* base decorative layer */
+.card--icon::after{
+  content: "";
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: clamp(120px, 35%, 220px);   /* responsive size */
+  aspect-ratio: 1 / 1;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: contain;
+
+  opacity: .14;                      /* keep it subtle */
+  filter: contrast(1.05);
+  pointer-events: none;              /* not interactive */
+}
+
+/* per-card images (path is from css/ to assets/) */
+.card--icon.property::after{ background-image: url("../assets/images/concerns/property.svg"); }
+.card--icon.will::after{     background-image: url("../assets/images/concerns/will.svg"); }
+.card--icon.elderly::after{  background-image: url("../assets/images/concerns/elderly.svg"); }
+.card--icon.fraud::after{    background-image: url("../assets/images/concerns/fraud.svg"); }
+
+/* soft lighting in the corner so the art blends nicely */
+.card--icon::before{
+  content: "";
+  position: absolute;
+  right: 0; bottom: 0;
+  width: 55%; height: 65%;
+  background: radial-gradient(60% 60% at 100% 100%, rgba(13,43,82,.06), transparent 70%);
+  pointer-events: none;
+}
+
+/* Slightly lift on hover */
+.card--icon:hover::after{
+  opacity: .22;
+  transform: translate(2px, 2px);
+  transition: opacity .2s, transform .2s;
+}
+
+/* Reduce visuals for users who prefer less motion/contrast */
+@media (prefers-reduced-motion: reduce){
+  .card--icon:hover::after{ transform: none; }
+}
+@media (forced-colors: active){
+  .card--icon::before, .card--icon::after{ display: none; }
+}
+
+/* Make the 'Concerns' cards bigger (height, padding, art size) */
+#concerns .container{
+  width: min(1280px, 94%); /* wider only for this section */
+}
+
+#concerns .cards{
+  gap: clamp(1rem, 1.4vw, 1.5rem); /* a bit more breathing room between cards */
+}
+
+#concerns .card{
+  padding: clamp(1.25rem, 1vw + 1rem, 1.9rem) clamp(1.25rem, 1.2vw + 1rem, 2.1rem);
+  border-radius: 18px; /* slightly larger corners to match bigger size */
+}
+
+#concerns .card--icon{
+  min-height: clamp(180px, 22vw, 240px); /* taller cards */
+}
+
+#concerns .card--icon .icon{
+  width: 40px; height: 40px; border-radius: 12px; /* scale the star badge a bit */
+}
+
+/* Larger, softer decorative illustration */
+#concerns .card--icon::after{
+  width: clamp(170px, 44%, 300px); /* bigger art */
+  opacity: .10;                   /* keep it subtle so text stays readable */
+}
+
+/* Mobile: don’t force tall cards */
+@media (max-width: 640px){
+  #concerns .card--icon{ min-height: auto; }
+  #concerns .card--icon::after{ width: clamp(130px, 55%, 200px); }
+}
+
+/* Style the media box in the hero section */
+.media-box .media-img{
+width: 100%;
+height: 100%;
+object-fit: cover;
+display: block;
+border-radius: 16px; 
 }
