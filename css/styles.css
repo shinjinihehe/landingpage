@@ -189,3 +189,53 @@ blockquote,
 
 /* Footer year spacing (if you added the dynamic year) */
 .site-footer small { display: inline-block; padding: 4px 0; }
+
+/* Responsive adjustments */
+/* 1) Equal-height columns and aligned bottoms */
+.grid3 { align-items: stretch; }               /* grid rows match tallest column */
+.col { display: flex; flex-direction: column; gap: 18px; }
+.push-bottom { margin-top: auto; }             /* stick last block to bottom */
+
+/* 2) QR smaller and responsive */
+.qr-card img {
+  width: clamp(130px, 15vw, 180px);            /* max ~180px on desktop */
+  height: auto;
+}
+
+/* Keep the QR card compact and centered in mid column */
+.qr-card { max-width: 380px; margin-left: auto; }
+
+/* 3) Headline: try to keep on one line on large screens */
+.hero h1, .hero h2 {
+  font-size: clamp(22px, 2.8vw, 36px);         /* slightly smaller than before */
+  line-height: 1.25;
+}
+@media (min-width: 1200px) {
+  .hero h1, .hero h2 { white-space: nowrap; }  /* single line on big screens */
+}
+
+/* 4) Subtle card borders to match flyer look */
+blockquote, .contact-block, .qr-card {
+  border: 1px solid #e5e7eb;
+  background: #fff;
+}
+
+/* 5) Flyer-like callout */
+.callout {
+  position: relative;
+  border: 2px solid var(--accent);
+  background: #fff7cc;
+  font-weight: 700;
+  border-radius: 12px;
+  padding: 14px 18px;
+  outline: 3px dashed var(--accent);
+  outline-offset: 6px;
+}
+
+/* 6) Column proportions (closer to flyer) */
+@media (min-width: 1024px) {
+  .grid3 {
+    grid-template-columns: 1.12fr 1.12fr 0.96fr;
+    align-items: stretch;
+  }
+}
