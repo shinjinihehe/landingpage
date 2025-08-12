@@ -302,14 +302,17 @@
 
    <nav
   data-nav
-  class="fixed top-0 right-0 h-full w-64 bg-[#22304a] flex-col gap-6 p-8 z-50 shadow-lg
-         transition-transform duration-300 translate-x-full
-         max-[880px]:flex min-[881px]:hidden"
+  class="flex items-center gap-6 text-[15px] 
+         max-[880px]:fixed max-[880px]:top-0 max-[880px]:right-0 max-[880px]:h-full max-[880px]:w-64 
+         max-[880px]:flex-col max-[880px]:items-start max-[880px]:bg-[#22304a] max-[880px]:p-8 
+         max-[880px]:z-40 max-[880px]:shadow-lg max-[880px]:transition-transform max-[880px]:duration-300 
+         max-[880px]:translate-x-full"
 >
   <button
-    class="self-end mb-8"
+    class="self-end mb-8 block max-[880px]:block min-[881px]:hidden"
     aria-label="Close navigation"
     data-nav-close
+    tabindex="-1"
   >
     <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
