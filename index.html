@@ -3,226 +3,599 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          screens: {
+            xs: "320px",
+            sm: "576px",
+            md: "768px",
+            lg: "992px",
+            xl: "1200px",
+            "2xl": "1400px",
+            "3xl": "1580px",
+          },
+          extend: {
+            fontFamily: {
+              inter: ["Inter", "sans-serif"],
+              sora: ["Sora", "sans-serif"],
+            },
+            colors: {
+              bg: "#EAF3FF",
+              brand: "#0D2B52",
+              "brand-900": "#0A2344",
+              white: "#FFFFFF",
+              text: "#0B1829",
+              muted: "#5B6B82",
+              border: "rgba(13,43,82,0.12)",
+            },
+          },
+        },
+      };
+    </script>
     <title>Innerwork Advisors Limited — NRI Services</title>
-    <meta name="description" content="Standing beside NRIs—protecting your interests, always. Legal, property management, security, accounting & private investigations."/>
-    <link rel="icon" href="assets/images/logos/favicon.svg" type="image/svg+xml" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+    <meta
+      name="description"
+      content="Standing beside NRIs—protecting your interests, always. Legal, property management, security, accounting & private investigations."
+    />
+    <link
+      rel="icon"
+      href="assets/images/logos/favicon.svg"
+      type="image/svg+xml"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
 
-  <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+  <body class="font-inter bg-bg text-text leading-relaxed">
+    <a
+      href="#main"
+      class="absolute left-[-999px] focus:left-4 focus:top-4 focus:bg-white focus:px-3 focus:py-2 focus:rounded-lg z-[9999] shadow-lg"
+    >
+      Skip to content
+    </a>
 
     <!-- Header -->
-    <header class="site-header">
-      <div class="container header-row">
-        <a href="#" class="brand">
-          <img src="assets/images/logos/favicon.svg" alt="Innerwork Advisors logo" class="brand-mark" />
-          <span class="brand-name">Innerwork Advisors Limited</span>
+    <header
+      class="sticky top-0 z-50 bg-[rgba(234,243,255,0.7)] backdrop-saturate-[140%] backdrop-blur-md border-b border-border"
+    >
+      <div
+        class="container mx-auto w-[min(1200px,92%)] flex justify-between items-center py-3"
+      >
+        <a href="#" class="flex items-center gap-3 font-bold text-brand-900">
+          <img
+            src="assets/images/logos/favicon.svg"
+            alt="Innerwork Advisors logo"
+            class="w-9 h-9"
+          />
+          <span>Innerwork Advisors Limited</span>
         </a>
-
-        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" data-nav-toggle>
-          <span></span><span></span><span></span>
+        <button
+          class="hidden max-[880px]:inline-block p-1"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+          data-nav-toggle
+        >
+          <span class="block w-6 h-0.5 bg-brand-900 my-1"></span>
+          <span class="block w-6 h-0.5 bg-brand-900 my-1"></span>
+          <span class="block w-6 h-0.5 bg-brand-900 my-1"></span>
         </button>
-
-        <nav class="site-nav" data-nav>
-          <a href="#concerns">Challenges</a>
-          <a href="#services">Services</a>
-          <a href="#testimonials">Testimonials</a>
-          <a href="#contact">Contact</a>
-          <a class="btn btn--primary btn--small" href="#contact">Consultation</a>
+        <nav
+          data-nav
+          class="flex items-center gap-5 max-[880px]:fixed max-[880px]:inset-x-0 max-[880px]:top-[60px] max-[880px]:bg-white max-[880px]:border-b max-[880px]:border-border max-[880px]:grid max-[880px]:gap-1 max-[880px]:p-3 max-[880px]:transform max-[880px]:-translate-y-full max-[880px]:transition-transform"
+        >
+          <a href="#concerns" class="font-semibold text-brand-900">Challenges</a>
+          <a href="#services" class="font-semibold text-brand-900">Services</a>
+          <a
+            href="#testimonials"
+            class="font-semibold text-brand-900"
+            >Testimonials</a
+          >
+          <a href="#contact" class="font-semibold text-brand-900">Contact</a>
+          <a
+            href="#contact"
+            class="bg-brand text-white font-bold py-2 px-4 rounded-lg"
+            >Consultation</a
+          >
         </nav>
       </div>
     </header>
 
     <main id="main">
       <!-- Hero -->
-      <section class="hero section--pad">
-        <div class="container hero-grid">
-          <div class="hero-copy">
-            <p class="ribbon">UK Company Registration: <strong>16609536</strong></p>
-            <h1 class="hero-title">Standing beside NRIs — protecting your interests, always</h1>
-            <p class="hero-sub">
-              With offices in Kolkata and Manchester, we provide trustworthy, cross‑border support for
-              legal services, property management, security, accounting & taxation, and private investigations.
+      <section
+        class="bg-gradient-to-br from-brand-900 via-brand to-[#134075] text-white relative overflow-hidden py-12"
+      >
+        <div
+          class="container mx-auto w-[min(1200px,92%)] grid md:grid-cols-[1.05fr_.95fr] gap-8 items-center"
+        >
+          <div>
+            <p
+              class="inline-block bg-white/10 px-3 py-1 rounded-full font-semibold mb-3"
+            >
+              UK Company Registration: <strong>16609536</strong>
             </p>
-            <div class="hero-cta">
-              <a class="btn btn--contrast" href="#contact">Get Consultation</a>
-              <a class="btn btn--ghost" href="tel:+919830232051">Call +91 98302 32051</a>
+            <h1
+              class="font-sora text-[clamp(2rem,3.4vw+1rem,3.75rem)] leading-tight"
+            >
+              Standing beside NRIs — protecting your interests, always
+            </h1>
+            <p class="text-[#E6EEFA] max-w-[60ch] my-3">
+              With offices in Kolkata and Manchester, we provide trustworthy,
+              cross-border support for legal services, property management,
+              security, accounting & taxation, and private investigations.
+            </p>
+            <div class="flex flex-wrap gap-3 mb-4">
+              <a
+                class="bg-white text-brand-900 font-bold py-3 px-5 rounded-lg"
+                href="#contact"
+                >Get Consultation</a
+              >
+              <a
+                class="border border-white text-white font-bold py-3 px-5 rounded-lg bg-white/5"
+                href="tel:+919830232051"
+                >Call +91 98302 32051</a
+              >
             </div>
-
-            <ul class="trust-points">
+            <ul
+              class="grid grid-cols-2 gap-x-8 gap-y-2 max-[640px]:grid-cols-1"
+            >
               <li>Responsive, professional support</li>
               <li>Transparent communication</li>
-              <li>On‑ground assistance in India</li>
+              <li
+                class="col-span-2 justify-self-center max-[640px]:col-span-1 max-[640px]:justify-self-start"
+              >
+                On-ground assistance in India
+              </li>
             </ul>
           </div>
-
-         <figure class="hero-media"> 
-          <div class="media-box"> <img class="media-img" src="assets/images/hero/hero-team.jpg" alt="Our team supporting NRIs across India and the UK" loading="lazy" /> 
-          </div> 
-          <!-- <figcaption>We’re here to help NRIs manage affairs in India with confidence.</figcaption>  -->
-        </figure>
+          <figure>
+            <div
+              class="bg-white/10 border border-white/20 rounded-xl overflow-hidden shadow-2xl"
+            >
+              <img
+                class="w-full h-auto object-cover"
+                src="assets/images/hero/hero-team.jpg"
+                alt="Our team supporting NRIs across India and the UK"
+                loading="lazy"
+              />
+            </div>
+          </figure>
         </div>
       </section>
 
       <!-- Concerns -->
-<section id="concerns" class="section--pad">
-  <div class="container">
-    <h2 class="section-title">Do you face these concerns?</h2>
-
-    <div class="cards grid-2">
-      <div class="card card--icon property">
-        <span class="icon" aria-hidden="true">★</span>
-        <h3>Property disputes or management issues in India</h3>
-        <p>Local, reliable representation to safeguard your assets.</p>
-      </div>
-
-      <div class="card card--icon will">
-        <span class="icon" aria-hidden="true">★</span>
-        <h3>Will & inheritance matters that need attention</h3>
-        <p>Guidance to protect family interests and documentation.</p>
-      </div>
-
-      <div class="card card--icon elderly">
-        <span class="icon" aria-hidden="true">★</span>
-        <h3>Elderly relatives in India requiring care & legal assistance</h3>
-        <p>On‑ground help, coordinated care, and legal support.</p>
-      </div>
-
-      <div class="card card--icon fraud">
-        <span class="icon" aria-hidden="true">★</span>
-        <h3>Risk of being cheated by unreliable local contacts</h3>
-        <p>Due diligence, verification, and trusted service partners.</p>
-      </div>
-    </div>
-  </div>
-</section>
+      <section id="concerns" class="py-12">
+        <div class="container mx-auto w-[min(1280px,94%)]">
+          <h2
+            class="font-sora text-[clamp(1.5rem,2.2vw+1rem,2.25rem)] mb-5"
+          >
+            Do you face these concerns?
+          </h2>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="card--icon property">
+              <span class="icon">★</span>
+              <h3>Property disputes or management issues in India</h3>
+              <p>Local, reliable representation to safeguard your assets.</p>
+            </div>
+            <div class="card--icon will">
+              <span class="icon">★</span>
+              <h3>Will & inheritance matters that need attention</h3>
+              <p>Guidance to protect family interests and documentation.</p>
+            </div>
+            <div class="card--icon elderly">
+              <span class="icon">★</span>
+              <h3>
+                Elderly relatives in India requiring care & legal assistance
+              </h3>
+              <p>On-ground help, coordinated care, and legal support.</p>
+            </div>
+            <div class="card--icon fraud">
+              <span class="icon">★</span>
+              <h3>Risk of being cheated by unreliable local contacts</h3>
+              <p>Due diligence, verification, and trusted service partners.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <!-- Services -->
-      <section id="services" class="section--pad alt">
-  <div class="container">
-    <h2 class="section-title">Our services for NRIs</h2>
-          <div class="cards pattern-3-2 center-last-two">
-
-            <div class="card">
-              <h3>Legal Services</h3>
-              <p>Case management, representation, documentation, and compliance.</p>
+      <section id="services" class="py-12 bg-white/70">
+        <div class="container mx-auto w-[min(1200px,92%)]">
+          <h2
+            class="font-sora text-[clamp(1.5rem,2.2vw+1rem,2.25rem)] mb-5"
+          >
+            Our services for NRIs
+          </h2>
+          <div
+            class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 justify-items-stretch"
+          >
+            <div class="bg-white border border-border rounded-xl p-5 shadow-lg">
+              <h3 class="font-sora text-lg text-brand-900">Legal Services</h3>
+              <p>
+                Case management, representation, documentation, and compliance.
+              </p>
             </div>
-            <div class="card">
-              <h3>Property Management</h3>
-              <p>Tenant coordination, rent collection, maintenance, and disputes.</p>
+            <div class="bg-white border border-border rounded-xl p-5 shadow-lg">
+              <h3 class="font-sora text-lg text-brand-900">
+                Property Management
+              </h3>
+              <p>
+                Tenant coordination, rent collection, maintenance, and disputes.
+              </p>
             </div>
-            <div class="card">
-              <h3>Security Solutions</h3>
+            <div class="bg-white border border-border rounded-xl p-5 shadow-lg">
+              <h3 class="font-sora text-lg text-brand-900">
+                Security Solutions
+              </h3>
               <p>Asset protection and risk assessments.</p>
             </div>
-            <div class="card">
-              <h3>Accounting & Taxation</h3>
-              <p>Filing, advisory, and cross‑border documentation support.</p>
+            <div class="bg-white border border-border rounded-xl p-5 shadow-lg">
+              <h3 class="font-sora text-lg text-brand-900">
+                Accounting & Taxation
+              </h3>
+              <p>
+                Filing, advisory, and cross-border documentation support.
+              </p>
             </div>
-            <div class="card">
-              <h3>Private Investigations</h3>
-              <p>Background checks, verification, and evidence collection.</p>
+            <div class="bg-white border border-border rounded-xl p-5 shadow-lg">
+              <h3 class="font-sora text-lg text-brand-900">
+                Private Investigations
+              </h3>
+              <p>
+                Background checks, verification, and evidence collection.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
       <!-- Testimonials -->
-      <section id="testimonials" class="section--pad">
-        <div class="container">
-          <h2 class="section-title">What our UK clients say</h2>
-          <div class="cards grid-2">
-            <blockquote class="card quote">
-              <p>“It has been a pleasure to be associated with Innerwork Advisors. Your professionalism,
-                kindness and efforts to provide the highest level of customer services beyond comparison.
-                I wish the entire team a successful future ahead.”</p>
-              <footer>— Dr Sriparna Datta, London, UK</footer>
+      <section id="testimonials" class="py-12">
+        <div class="container mx-auto w-[min(1200px,92%)]">
+          <h2
+            class="font-sora text-[clamp(1.5rem,2.2vw+1rem,2.25rem)] mb-5"
+          >
+            What our UK clients say
+          </h2>
+          <div class="grid md:grid-cols-2 gap-6">
+            <blockquote
+              class="bg-white border border-border rounded-xl p-6 shadow-lg"
+            >
+              <p>
+                “It has been a pleasure to be associated with Innerwork
+                Advisors. Your professionalism, kindness and efforts to provide
+                the highest level of customer services beyond comparison. I
+                wish the entire team a successful future ahead.”
+              </p>
+              <footer class="mt-3 text-muted font-semibold">
+                — Dr Sriparna Datta, London, UK
+              </footer>
             </blockquote>
-            <blockquote class="card quote">
-              <p>“Excellent service, professional, friendly and very efficient staff, very reasonable fees,
-                amazing time management, highly recommended.”</p>
-              <footer>— Dr Sonali Guha, London, UK</footer>
+            <blockquote
+              class="bg-white border border-border rounded-xl p-6 shadow-lg"
+            >
+              <p>
+                “Excellent service, professional, friendly and very efficient
+                staff, very reasonable fees, amazing time management, highly
+                recommended.”
+              </p>
+              <footer class="mt-3 text-muted font-semibold">
+                — Dr Sonali Guha, London, UK
+              </footer>
             </blockquote>
           </div>
         </div>
       </section>
 
-      <!-- Contact / Offices -->
-      <section id="contact" class="section--pad cta-band">
-        <div class="container contact-grid">
-          <div>
-            <h2 class="cta-title">One call, and your concerns are ours to solve.</h2>
-            <p class="cta-sub">Speak with our team for a consultation.</p>
+ <!-- OFFICES / MAPS -->
+<section class="bg-[#0e2233] py-14">
+  <div class="mx-auto w-[min(1200px,92%)]">
+    <!-- Section Title -->
+    <h2 class="text-white text-3xl md:text-4xl font-semibold text-center tracking-tight">
+      Our Offices
+    </h2>
 
-            <div class="contact-actions"> 
-              <a class="btn btn--contrast btn--block" href="tel:+919830232051">Call India: +91 98302 32051</a> 
-              <a class="btn btn--contrast btn--block" href="tel:+447941485199">Call UK: +44 7941 485199</a> 
-              <a class="btn btn--contrast btn--block" href="mailto:info@innerworkadvisorsllp.com"> 
-                <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> 
-                  <rect x="3" y="5" width="18" height="14" rx="2"></rect> 
-                  <path d="M3 7l9 6 9-6"></path> 
-                </svg> Email us 
-              </a> 
-            </div>
+    <!-- Cards Grid (Kolkata x2 + UK x1) -->
+    <div class="mt-10 grid gap-8 sm:grid-cols-2 xl:grid-cols-3">
+      <!-- Martin Burn House -->
+      <article class="rounded-2xl border border-white/15 bg-white/5 shadow-2xl shadow-black/20 backdrop-blur-sm">
+        <div class="p-6">
+          <h3 class="text-white text-xl md:text-2xl font-semibold leading-snug flex items-start gap-2">
+            <svg class="mt-0.5 h-5 w-5 shrink-0 text-amber-300" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path d="M10 2C6.13 2 3 5.13 3 9c0 5.25 7 11 7 11s7-5.75 7-11c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 10 6a2.5 2.5 0 0 1 0 5.5z"/>
+            </svg>
+            <span>Martin Burn House, 1 R.N. Mukherjee Rd, Gr Floor, Kolkata 700001</span>
+          </h3>
+
+          <p class="mt-1 inline-flex items-center gap-2 text-[13px] font-semibold uppercase tracking-wide text-cyan-200/90">
+            <span class="inline-block h-1.5 w-1.5 rounded-full bg-cyan-300"></span>
+            Working Office
+          </p>
+
+          <div class="mt-4 overflow-hidden rounded-xl ring-1 ring-white/10">
+            <iframe
+              loading="lazy"
+              title="Martin Burn House Map"
+              class="h-72 w-full border-0"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.180487303129!2d88.34892027405944!3d22.572351932981803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277a5baabca5f%3A0xbe43dc306dbe663b!2sMartin%20Burn%20House!5e0!3m2!1sen!2sin!4v1742936965216!5m2!1sen!2sin"
+              allowfullscreen
+            ></iframe>
           </div>
 
-          <div class="offices">
-            <div class="office">
-              <h3>Kolkata Office</h3>
-              <p>
-                Martin Burn House, 1 R.N. Mukherjee Road, G‑floor, Kolkata – 700 001<br/>
-                & 22, Sukeas Lane, 5th‑floor, Kolkata – 700 001
-              </p>
-              <p class="muted">
-                Phone: +91 98302 32051, +91 90739 32051, +91 90736 72051
-              </p>
-              <p>
-                <a href="https://innerworkadvisorsllp.com/" target="_blank" rel="noopener">innerworkadvisorsllp.com</a><br/>
-                <a href="mailto:info@innerworkadvisorsllp.com">info@innerworkadvisorsllp.com</a>
-              </p>
-            </div>
+          <div class="mt-3">
+            <a
+              href="https://www.google.com/maps/place/Martin+Burn+House/@22.572352,88.34892,17z/data=!3m1!4b1"
+              target="_blank" rel="noopener"
+              class="inline-flex items-center gap-2 rounded-lg bg-emerald-500/90 px-3 py-2 text-sm font-medium text-white hover:bg-emerald-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300"
+            >
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.14 2 5 5.14 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.86-3.14-7-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5Z"/></svg>
+              Open in Google Maps
+            </a>
+          </div>
 
-            <div class="office">
-              <h3>Manchester Office (UK)</h3>
-              <p>
-                Clockwise Linley House, Dickinson Street, Manchester M1 4LF
-              </p>
-              <p class="muted">
-                Phone: +44 7941 485199, 0161 676 2361
-              </p>
-              <p>
-                <a href="https://innerworklegalservices.com/" target="_blank" rel="noopener">innerworklegalservices.com</a><br/>
-                <a href="mailto:info@innerworklegalservices.com">info@innerworklegalservices.com</a>
-              </p>
-            </div>
-
-            <div class="qr">
-              <!-- <img src="assets/images/qr/qr-placeholder.png" alt="QR to connect instantly (placeholder)" /> -->
-               <img src="assets/qr/qr-mock.png" width="210" height="210" alt="Scan QR to connect instantly" loading="lazy" />
-              <span class="qr-caption">Scan to connect instantly</span>
-            </div>
+          <div class="mt-5 border-t border-white/10 pt-4">
+            <p class="text-[13px] uppercase tracking-wide text-slate-300/90">Phone</p>
+            <ul class="mt-2 space-y-2">
+              <li>
+                <a href="tel:+919830232051" title="00919830232051"
+                   class="group inline-flex items-center gap-2 text-slate-100 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300">
+                  <svg class="h-[18px] w-[18px] opacity-80 group-hover:opacity-100" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.09 15.09 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24 11.36 11.36 0 0 0 3.57.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 7a1 1 0 0 1 1-1h2.5a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.57 1 1 0 0 1-.24 1.01l-1.21 1.21Z"/></svg>
+                  <span class="tabular-nums">+91&nbsp;98302&nbsp;32051</span>
+                </a>
+              </li>
+              <li>
+                <a href="tel:+919073932051" title="00919073932051"
+                   class="group inline-flex items-center gap-2 text-slate-100 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300">
+                  <svg class="h-[18px] w-[18px] opacity-80 group-hover:opacity-100" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.09 15.09 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24 11.36 11.36 0 0 0 3.57.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 7a1 1 0 0 1 1-1h2.5a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.57 1 1 0 0 1-.24 1.01l-1.21 1.21Z"/></svg>
+                  <span class="tabular-nums">+91&nbsp;90739&nbsp;32051</span>
+                </a>
+              </li>
+              <li>
+                <a href="tel:+919073672051" title="00919073672051"
+                   class="group inline-flex items-center gap-2 text-slate-100 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300">
+                  <svg class="h-[18px] w-[18px] opacity-80 group-hover:opacity-100" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.09 15.09 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24 11.36 11.36 0 0 0 3.57.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 7a1 1 0 0 1 1-1h2.5a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.57 1 1 0 0 1-.24 1.01l-1.21 1.21Z"/></svg>
+                  <span class="tabular-nums">+91&nbsp;90736&nbsp;72051</span>
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
+      </article>
+
+      <!-- 22, Sukeas Lane -->
+      <article class="rounded-2xl border border-white/15 bg-white/5 shadow-2xl shadow-black/20 backdrop-blur-sm">
+        <div class="p-6">
+          <h3 class="text-white text-xl md:text-2xl font-semibold leading-snug flex items-start gap-2">
+            <svg class="mt-0.5 h-5 w-5 shrink-0 text-amber-300" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path d="M10 2C6.13 2 3 5.13 3 9c0 5.25 7 11 7 11s7-5.75 7-11c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 10 6a2.5 2.5 0 0 1 0 5.5z"/>
+            </svg>
+            <span>22, Sukeas Lane, 5th Floor, Kolkata 700001</span>
+          </h3>
+
+          <p class="mt-1 inline-flex items-center gap-2 text-[13px] font-semibold uppercase tracking-wide text-fuchsia-200/90">
+            <span class="inline-block h-1.5 w-1.5 rounded-full bg-fuchsia-300"></span>
+            Registered Office
+          </p>
+
+          <div class="mt-4 overflow-hidden rounded-xl ring-1 ring-white/10">
+            <iframe
+              loading="lazy"
+              title="Sukeas Lane Map"
+              class="h-72 w-full border-0"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://maps.google.com/maps?q=Innerwork+Advisors+LLP%2C+5th+Floor%2C+22%2C+Sukeas+Ln%2C+Murgighata%2C+B.B.D.+Bagh%2C+Kolkata%2C+West+Bengal+700001&output=embed"
+              allowfullscreen
+            ></iframe>
+          </div>
+
+          <div class="mt-3">
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Innerwork+Advisors+LLP%2C+5th+Floor%2C+22%2C+Sukeas+Ln%2C+Kolkata+700001"
+              target="_blank" rel="noopener"
+              class="inline-flex items-center gap-2 rounded-lg bg-emerald-500/90 px-3 py-2 text-sm font-medium text-white hover:bg-emerald-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300"
+            >
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.14 2 5 5.14 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.86-3.14-7-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5Z"/></svg>
+              Open in Google Maps
+            </a>
+          </div>
+
+          <div class="mt-5 border-t border-white/10 pt-4">
+            <p class="text-[13px] uppercase tracking-wide text-slate-300/90">Phone</p>
+            <ul class="mt-2 space-y-2">
+              <li>
+                <a href="tel:+919830232051" title="00919830232051"
+                   class="group inline-flex items-center gap-2 text-slate-100 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-300">
+                  <svg class="h-[18px] w-[18px] opacity-80 group-hover:opacity-100" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.09 15.09 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24 11.36 11.36 0 0 0 3.57.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 7a1 1 0 0 1 1-1h2.5a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.57 1 1 0 0 1-.24 1.01l-1.21 1.21Z"/></svg>
+                  <span class="tabular-nums">+91&nbsp;98302&nbsp;32051</span>
+                </a>
+              </li>
+              <li>
+                <a href="tel:+919073932051" title="00919073932051"
+                   class="group inline-flex items-center gap-2 text-slate-100 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-300">
+                  <svg class="h-[18px] w-[18px] opacity-80 group-hover:opacity-100" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.09 15.09 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24 11.36 11.36 0 0 0 3.57.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 7a1 1 0 0 1 1-1h2.5a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.57 1 1 0 0 1-.24 1.01l-1.21 1.21Z"/></svg>
+                  <span class="tabular-nums">+91&nbsp;90739&nbsp;32051</span>
+                </a>
+              </li>
+              <li>
+                <a href="tel:+919073672051" title="00919073672051"
+                   class="group inline-flex items-center gap-2 text-slate-100 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-300">
+                  <svg class="h-[18px] w-[18px] opacity-80 group-hover:opacity-100" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.09 15.09 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24 11.36 11.36 0 0 0 3.57.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 7a1 1 0 0 1 1-1h2.5a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.57 1 1 0 0 1-.24 1.01l-1.21 1.21Z"/></svg>
+                  <span class="tabular-nums">+91&nbsp;90736&nbsp;72051</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- Office in United Kingdom -->
+   
+<article class="rounded-2xl border border-white/15 bg-white/5 shadow-2xl shadow-black/20 backdrop-blur-sm">
+  <div class="p-6">
+    <!-- Title -->
+    <h3 class="text-white text-xl md:text-2xl font-semibold leading-snug flex items-start gap-2">
+      <svg class="mt-0.5 h-5 w-5 shrink-0 text-amber-300" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+        <path d="M10 2C6.13 2 3 5.13 3 9c0 5.25 7 11 7 11s7-5.75 7-11c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 10 6a2.5 2.5 0 0 1 0 5.5z"/>
+      </svg>
+      <a
+        href="https://www.google.com/maps?q=Clockwise+Linley+House,+Dickinson+Street,+Manchester+M1+4LF"
+        target="_blank" rel="noopener"
+        class="font-medium text-sky-200 hover:text-sky-100 underline decoration-sky-300/70 underline-offset-2"
+      >
+        Clockwise Linley House
+      </a>
+    </h3>
+
+    <!-- Address -->
+    <p class="mt-2 text-slate-100/90">
+      Dickinson Street, Manchester. M1 4LF<br>
+      United Kingdom.
+    </p>
+
+    <!-- Map -->
+    <div class="mt-4 overflow-hidden rounded-xl ring-1 ring-white/10">
+      <iframe
+        title="Clockwise Linley House (Map)"
+        class="h-72 w-full border-0"
+        loading="lazy"
+        src="https://www.google.com/maps?q=Clockwise+Linley+House,+Dickinson+Street,+Manchester+M1+4LF&output=embed"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-3">
+      <a
+        href="https://www.google.com/maps?q=Clockwise+Linley+House,+Dickinson+Street,+Manchester+M1+4LF"
+        target="_blank" rel="noopener"
+        class="inline-flex items-center gap-2 rounded-lg bg-emerald-500/90 px-3 py-2 text-sm font-medium text-white hover:bg-emerald-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300"
+      >
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 2C8.14 2 5 5.14 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.86-3.14-7-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5Z"/>
+        </svg>
+        Open in Google Maps
+      </a>
+    </div>
+
+    <!-- Phones -->
+    <div class="mt-5 border-t border-white/10 pt-4">
+      <p class="text-[13px] uppercase tracking-wide text-slate-300/90">Phone</p>
+      <ul class="mt-2 space-y-2">
+        <li>
+          <a href="tel:+447941485199" title="07941 485199"
+             class="group inline-flex items-center gap-2 text-slate-100 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-300">
+            <svg class="h-[18px] w-[18px] opacity-80 group-hover:opacity-100" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M6.62 10.79a15.09 15.09 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24 11.36 11.36 0 0 0 3.57.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 7a1 1 0 0 1 1-1h2.5a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.57 1 1 0 0 1-.24 1.01l-1.21 1.21Z"/>
+            </svg>
+            <span class="tabular-nums">07941&nbsp;485199</span>
+          </a>
+        </li>
+        <li>
+          <a href="tel:01616762361" title="0161 676 2361"
+             class="group inline-flex items-center gap-2 text-slate-100 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-300">
+            <svg class="h-[18px] w-[18px] opacity-80 group-hover:opacity-100" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M6.62 10.79a15.09 15.09 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24 11.36 11.36 0 0 0 3.57.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 7a1 1 0 0 1 1-1h2.5a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.57 1 1 0 0 1-.24 1.01l-1.21 1.21Z"/>
+            </svg>
+            <span class="tabular-nums">0161&nbsp;676&nbsp;2361</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- THIN FOOTER CONTACT SECTION -->
+<footer class="bg-[#E3EEFF] border-t border-border">
+  <div class="container mx-auto w-[min(1200px,92%)] flex flex-col md:flex-row items-center justify-between gap-4 py-6">
+    <div class="flex-1 text-center md:text-left">
+      <h2 class="font-sora text-2xl md:text-3xl font-bold text-brand-900 mb-1">
+        One call, and your concerns are ours to solve.
+      </h2>
+      <p class="text-muted mb-3">Speak with our team for a consultation.</p>
+    </div>
+    <div class="flex flex-col gap-2 w-full md:w-auto max-w-xs mx-auto">
+      <a
+        class="bg-white text-brand-900 font-bold py-2 px-5 rounded-lg w-full text-center border border-brand-900"
+        href="tel:+919830232051"
+      >Call India: +91 98302 32051</a>
+      <a
+        class="bg-white text-brand-900 font-bold py-2 px-5 rounded-lg w-full text-center border border-brand-900"
+        href="tel:+447941485199"
+      >Call UK: +44 7941 485199</a>
+      <a
+        class="bg-white text-brand-900 font-bold py-2 px-5 rounded-lg w-full text-center flex items-center justify-center gap-2 border border-brand-900"
+        href="mailto:info@innerworkadvisorsllp.com"
+      >
+        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>
+        Email us
+      </a>
+    </div>
+  
+</footer>
+<script>
+  document.getElementById("y").textContent = new Date().getFullYear();
+</script>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="container footer-row">
-        <div class="footer-brand">
-          <img src="assets/images/logos/favicon.svg" class="brand-mark" alt="" />
-          <span class="brand-name">Innerwork Advisors Limited</span>
+    <!-- Footer -->
+    <footer class="bg-[#E3EEFF] border-t border-border">
+      <div
+        class="container mx-auto w-[min(1200px,92%)] flex justify-between items-center gap-4 py-5"
+      >
+        <div class="flex items-center gap-2 text-brand-900">
+          <img
+            src="assets/images/logos/favicon.svg"
+            class="w-9 h-9"
+            alt=""
+          />
+          <span>Innerwork Advisors Limited</span>
         </div>
-        <p class="small muted">© <span id="y"></span> Innerwork Advisors Limited. All rights reserved.</p>
+        <p class="text-sm text-muted">
+          © <span id="y"></span> Innerwork Advisors Limited. All rights
+          reserved.
+        </p>
       </div>
     </footer>
 
-    <script src="js/main.js"></script>
     <script>
-      document.getElementById('y').textContent = new Date().getFullYear();
+      document.getElementById("y").textContent = new Date().getFullYear();
     </script>
+    <script>
+  const toggle = document.querySelector('[data-nav-toggle]');
+  const nav = document.querySelector('[data-nav]');
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      nav.style.transform = isOpen ? 'translateY(0)' : '';
+    });
+    nav.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        nav.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        nav.style.transform = '';
+      });
+    });
+  }
+</script>
   </body>
 </html>
