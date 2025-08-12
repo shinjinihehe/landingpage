@@ -20,4 +20,8 @@
 
 [data-nav].is-open {
   transform: translateY(0) !important;
+
+  [data-nav].is-open {
+  transform: translateX(0) !important;
+}
 }
