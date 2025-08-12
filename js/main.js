@@ -4,14 +4,16 @@ const closeBtn = nav.querySelector('[data-nav-close]');
 
 if (toggle && nav) {
   toggle.addEventListener('click', () => {
-    const isOpen = nav.classList.toggle('is-open');
-    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    nav.classList.add('is-open');
+    toggle.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('overflow-hidden'); // Prevent background scroll
   });
 
   nav.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => {
       nav.classList.remove('is-open');
       toggle.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('overflow-hidden');
     });
   });
 
@@ -19,6 +21,7 @@ if (toggle && nav) {
     closeBtn.addEventListener('click', () => {
       nav.classList.remove('is-open');
       toggle.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('overflow-hidden');
     });
   }
 }
