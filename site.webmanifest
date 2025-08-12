@@ -1,0 +1,11 @@
+﻿{
+  "name": "Innerwork Advisors Landing Page",
+  "short_name": "Innerwork",
+  "icons": [
+    { "src": "assets/logos/favicon.svg", "sizes": "64x64", "type": "image/svg+xml" }
+  ],
+  "theme_color": "#1f3a56",
+  "background_color": "#f8fafc",
+  "display": "standalone",
+  "start_url": "/"
+}
