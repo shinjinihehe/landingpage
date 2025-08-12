@@ -131,3 +131,61 @@ blockquote cite { display: block; color: var(--muted); margin-top: 6px; }
 /* Footer */
 .site-footer { border-top: 1px solid #e5e7eb; background: #fff; padding: 16px 0; }
 .site-footer small { color: #64748b; }
+
+/* Responsive adjustments */
+/* Wider canvas + larger hero line like the flyer */
+.container { width: min(1240px, 92%); }
+.hero h1, .hero h2 {
+  font-size: clamp(22px, 3.6vw, 40px);
+  letter-spacing: 0.2px;
+}
+
+/* Make columns feel closer to the flyer proportions */
+@media (min-width: 1024px) {
+  .grid3 {
+    grid-template-columns: 1.15fr 1.1fr 0.95fr; /* left + middle slightly wider */
+    align-items: start;
+  }
+}
+
+/* Stronger “card” feel for testimonial + contact blocks (like the image) */
+blockquote,
+.contact-block,
+.qr-card {
+  border: 1px solid #e5e7eb;
+  background: #fff;
+}
+
+/* Callout: solid + dashed outline to mimic the flyer’s double border */
+.callout {
+  position: relative;
+  border: 2px solid var(--accent);
+  background: #fff7cc;
+  font-weight: 700;
+  border-radius: 12px;
+  padding: 14px 18px;
+  outline: 3px dashed var(--accent);
+  outline-offset: 6px;
+}
+
+/* More “star” presence like the flyer */
+.icon-list li::before {
+  content: "★";
+  color: var(--brand);
+  font-size: 18px;
+  top: 0;
+}
+
+/* QR card: slightly larger and centered */
+.qr-card img { width: 240px; height: 240px; }
+
+/* Logo panel: keep compact, with small captions underneath */
+.logos figure { background: #f3f4f6; border: 1px solid #e5e7eb; border-radius: 8px; padding: 8px; }
+.logos figcaption { margin-top: 6px; }
+
+/* Headings spacing */
+.col h2 { margin-bottom: 8px; }
+.col h3 { margin-top: 20px; margin-bottom: 8px; }
+
+/* Footer year spacing (if you added the dynamic year) */
+.site-footer small { display: inline-block; padding: 4px 0; }
