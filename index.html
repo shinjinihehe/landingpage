@@ -139,36 +139,71 @@
     border-color: rgba(255,255,255,0.25);
   }
 
-  /* Header / Nav */
-  header.navbar {
-    position: sticky; top: 0; z-index: 50;
-    background: var(--blue-brand);
-    color: #fff;
-    border-bottom: 1px solid rgba(230,201,141,0.25);
-    backdrop-filter: saturate(120%) blur(6px);
-  }
+
+:root {
+  --blue-brand: 0, 61, 128;
+}
+
+/* Sticky navbar: solid by default */
+header.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgb(var(--blue-brand)); /* solid blue */
+  color: #fff;
+  border-bottom: 1px solid rgba(230,201,141,0.25);
+  transition: background 0.3s, backdrop-filter 0.3s;
+}
+
+/* When scrolled, make it translucent and blurred */
+header.navbar.scrolled {
+  background: rgba(var(--blue-brand), 0.6);
+  backdrop-filter: saturate(120%) blur(6px);
+}
+
+/* Mobile menu - hidden by default */
+[data-nav] {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 100%;
+  max-width: 300px;
+  background: rgba(var(--blue-brand), 0.96); /* more opaque for better contrast */
+  backdrop-filter: saturate(120%) blur(6px);
+  transform: translateX(100%);
+  pointer-events: none;
+  transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+  z-index: 9999;
+  overflow-y: auto;
+  box-shadow: -2px 0 16px rgba(0,0,0,0.12);
+}
+
+/* Mobile menu open state */
+[data-nav].is-open {
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+/* Desktop override */
+@media (min-width: 881px) {
   [data-nav] {
-    transition: transform .25s ease, opacity .25s ease;
+    display: flex !important;
+    align-items: center;
+    gap: 2rem;
+    position: static;
+    height: auto;
+    max-width: none;
+    width: auto;
+    transform: none;
+    pointer-events: auto;
+    backdrop-filter: none;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    overflow: visible;
   }
-  @media (max-width: 880px){
-    [data-nav] {
-      position: fixed;
-      inset: 60px 0 auto 0;
-      background: var(--blue-brand);
-      border-bottom: 1px solid rgba(230,201,141,0.25);
-      padding: 0.75rem;
-      display: grid;
-      gap: 0.5rem;
-      transform: translateY(-100%);
-      opacity: 0;
-      pointer-events: none;
-    }
-    [data-nav].is-open {
-      transform: translateY(0);
-      opacity: 1;
-      pointer-events: auto;
-    }
-  }
+}
 
   /* Hero */
   .eyebrow {
@@ -277,6 +312,9 @@
   overflow-x: hidden;
 }
 
+body.nav-open {
+      overflow: hidden;
+    }
 </style>
 </head> <body class="font-roboto text-white leading-relaxed"> <a href="#main" class="skip-link">Skip to content</a>
 
@@ -284,15 +322,20 @@
 <!-- Header -->
 <header class="navbar">
   <div class="container-narrow flex items-center justify-between py-3">
+    <!-- Logo and Title -->
     <a href="#" class="flex items-center gap-3 font-bold text-secondary-contrast">
-      <img
-        src="assets/images/logos/favicon.svg"
-        alt="Innerwork Advisors logo"
-        class="w-9 h-9"
-      />
+      <img src="assets/images/logos/favicon.svg" alt="Logo" class="w-9 h-9" />
       <span class="font-poppins text-xl">Innerwork Advisors Limited</span>
     </a>
-
+    <!-- Desktop Nav -->
+    <nav class="hidden min-[881px]:flex items-center gap-6 text-[15px]">
+      <a href="#concerns" class="font-medium text-white/90 hover:text-[var(--gold-contrast)] transition">Challenges</a>
+      <a href="#services" class="font-medium text-white/90 hover:text-[var(--gold-contrast)] transition">Services</a>
+      <a href="#testimonials" class="font-medium text-white/90 hover:text-[var(--gold-contrast)] transition">Testimonials</a>
+      <a href="#offices" class="font-medium text-white/90 hover:text-[var(--gold-contrast)] transition">Offices</a>
+      <a href="#contact" class="btn btn-primary">Consultation</a>
+    </nav>
+    <!-- Hamburger Button (Mobile) -->
     <button
       class="hidden max-[880px]:inline-block p-1"
       aria-label="Toggle navigation"
@@ -303,18 +346,16 @@
       <span class="block w-6 h-0.5 bg-[var(--gold-contrast)] my-1"></span>
       <span class="block w-6 h-0.5 bg-[var(--gold-contrast)] my-1"></span>
     </button>
+  </div>
+</header>
 
-   <nav
+<!-- Mobile Nav Drawer OUTSIDE header -->
+<nav
   data-nav
-  class="flex items-center gap-6 text-[15px] 
-         max-[880px]:fixed max-[880px]:top-0 max-[880px]:right-0 max-[880px]:h-full max-[880px]:w-64 
-         max-[880px]:flex-col max-[880px]:items-start max-[880px]:bg-[#22304a] max-[880px]:p-8 
-         max-[880px]:z-40 max-[880px]:shadow-lg max-[880px]:transition-transform max-[880px]:duration-300 
-         max-[880px]:translate-x-[100%]
-"
+  class="fixed top-0 right-0 h-full w-64 flex-col items-start bg-[#22304a] p-8 z-40 shadow-lg transition-transform duration-300 translate-x-full max-[880px]:flex min-[881px]:hidden"
 >
   <button
-    class="self-end mb-8 block max-[880px]:block min-[881px]:hidden"
+    class="self-end mb-8 block"
     aria-label="Close navigation"
     data-nav-close
     tabindex="-1"
@@ -329,8 +370,6 @@
   <a href="#offices" class="font-medium text-white/90 hover:text-[var(--gold-contrast)] transition">Offices</a>
   <a href="#contact" class="btn btn-primary">Consultation</a>
 </nav>
-  </div>
-</header>
 
 <main id="main">
   <!-- Hero -->
@@ -664,4 +703,5 @@
     });
   }
 </script>
+<script src="main.js"></script>
 </body> </html>

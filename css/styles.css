@@ -1,4 +1,4 @@
-﻿.card--icon {
+﻿﻿.card--icon {
   @apply bg-white border border-[rgba(13,43,82,0.12)] rounded-xl p-6 shadow-lg grid grid-cols-[44px_1fr] gap-x-4 gap-y-1 items-start relative overflow-hidden;
 }
 
@@ -18,20 +18,10 @@
   z-index: 0;
 }
 
-[data-nav] {
-  position: fixed;
-  inset: 0; /* top:0, right:0, bottom:0, left:0 */
-  background-color: #22304a; /* Solid background */
-  z-index: 9999;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  padding: 2rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease-in-out;
-  transform: translateX(100%);
-}
-
 [data-nav].is-open {
+  transform: translateY(0) !important;
+
+  [data-nav].is-open {
   transform: translateX(0) !important;
+}
 }
