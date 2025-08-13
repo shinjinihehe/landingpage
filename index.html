@@ -273,6 +273,10 @@
     left: 1rem; top: 1rem; background: #fff; color: #000;
     padding: 0.5rem 0.75rem; border-radius: 0.5rem; z-index: 9999;
   }
+  html, body {
+  overflow-x: hidden;
+}
+
 </style>
 </head> <body class="font-roboto text-white leading-relaxed"> <a href="#main" class="skip-link">Skip to content</a>
 
@@ -306,7 +310,8 @@
          max-[880px]:fixed max-[880px]:top-0 max-[880px]:right-0 max-[880px]:h-full max-[880px]:w-64 
          max-[880px]:flex-col max-[880px]:items-start max-[880px]:bg-[#22304a] max-[880px]:p-8 
          max-[880px]:z-40 max-[880px]:shadow-lg max-[880px]:transition-transform max-[880px]:duration-300 
-         max-[880px]:translate-x-full"
+         max-[880px]:translate-x-[100%]
+"
 >
   <button
     class="self-end mb-8 block max-[880px]:block min-[881px]:hidden"
