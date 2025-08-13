@@ -315,6 +315,21 @@ header.navbar.scrolled {
 body.nav-open {
       overflow: hidden;
     }
+
+    header.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  background: rgb(var(--blue-brand));
+  color: #fff;
+  border-bottom: 1px solid rgba(230,201,141,0.25);
+  transition: background 0.3s, backdrop-filter 0.3s;
+}
+body {
+  padding-top: 64px; /* navbar height onujayi adjust korun */
+}
 </style>
 </head> <body class="font-roboto text-white leading-relaxed"> <a href="#main" class="skip-link">Skip to content</a>
 
@@ -350,20 +365,7 @@ body.nav-open {
 </header>
 
 <!-- Mobile Nav Drawer OUTSIDE header -->
-<nav
-  data-nav
-  class="fixed top-0 right-0 h-full w-64 flex-col items-start bg-[#22304a] p-8 z-40 shadow-lg transition-transform duration-300 translate-x-full max-[880px]:flex min-[881px]:hidden"
->
-  <button
-    class="self-end mb-8 block"
-    aria-label="Close navigation"
-    data-nav-close
-    tabindex="-1"
-  >
-    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
-    </svg>
-  </button>
+<nav data-nav class="fixed top-0 right-0 h-full w-64 flex-col items-start bg-[#22304a] pt-24 pr-6 pb-6 pl-6 z-40 shadow-lg transition-transform duration-300 translate-x-full max-[880px]:flex min-[881px]:hidden flex flex-col space-y-5">
   <a href="#concerns" class="font-medium text-white/90 hover:text-[var(--gold-contrast)] transition">Challenges</a>
   <a href="#services" class="font-medium text-white/90 hover:text-[var(--gold-contrast)] transition">Services</a>
   <a href="#testimonials" class="font-medium text-white/90 hover:text-[var(--gold-contrast)] transition">Testimonials</a>
