@@ -390,7 +390,7 @@ body {
 
 <main id="main">
   <!-- Hero -->
-<section class="section bg-primary-dark">
+<section id="hero" class="section bg-[var(--blue-dark)]">
   <div class="container-narrow grid md:grid-cols-[1.05fr_.95fr] gap-8 items-center">
     <!-- Left: Text Content -->
     <div class="text-center md:text-left">
@@ -430,7 +430,7 @@ body {
 </section>
 
   <!-- Our Team -->
-<section id="team" class="section section-our-team">
+<section id="team" class="section bg-[var(--surface)]">
   <div class="container-wide text-center">
     <h2 class="section-title">
       Meet <span class="accent">Our Team</span>
@@ -451,7 +451,7 @@ body {
 
 
   <!-- Services -->
-  <section id="services" class="section bg-[linear-gradient(180deg,var(--surface)_0%,var(--blue-brand)_100%)]">
+  <section id="services" class="section bg-[var(--blue-dark)]">
   <div class="container-narrow">
     <h2 class="section-title">
       Our <span class="accent">Specialized NRI Services</span>
@@ -576,39 +576,48 @@ body {
 </section>
 
 <!-- Why Choose Us Section -->
-<section id="why-choose-us" class="section section-testimonials">
-  <div class="container-narrow">
-    <h2 class="section-title">
-      Why <span class="accent">UK-based NRIs</span> Choose Us
-    </h2>
-      <br>
-    <ul class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-8">
-      <li class="flex items-start gap-3 bg-white/5 p-4 rounded-lg shadow-sm transition-all duration-300">
-        <!-- Checkmark Icon (Phosphor) -->
-        <svg class="w-6 h-6 text-yellow-300 flex-shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span class="text-white/90 leading-relaxed">
-          <span class="font-bold">Local UK Office</span> – Consult with us in person, in your time zone.
-        </span>
+<section id="why-choose-us" class="py-20 bg-gradient-to-b from-[var(--surface-2)] to-slate-900">
+  <div class="container-narrow text-center">
+    
+    <h2 class="section-title mb-12 ...">Why <span class="accent">UK-based NRIs</span> Choose Us</h2>
+    
+    <ul class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto" role="list">
+      <!-- Box 1 -->
+      <li class="flex flex-col items-start bg-slate-800/90 border border-slate-700 p-8 rounded-2xl shadow-xl h-full hover:shadow-2xl hover:scale-105 transition-transform duration-300">
+        <div class="bg-yellow-400/30 p-3 rounded-full mb-5 shadow-md">
+          <svg class="w-8 h-8 text-yellow-300" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+            <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span class="text-xl font-bold text-white mb-2">Local UK Office</span>
+        <p class="text-white/80 text-base leading-relaxed">Consult with us in person, in your time zone.</p>
       </li>
-      <li class="flex items-start gap-3 bg-white/5 p-4 rounded-lg shadow-sm transition-all duration-300">
-        <svg class="w-6 h-6 text-yellow-300 flex-shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span class="text-white/90 leading-relaxed">
-          <span class="font-bold">Dual Jurisdiction Expertise</span> – Navigating both Indian and UK legal landscapes.
-        </span>
+      <!-- Box 2 -->
+      <li class="flex flex-col items-start bg-slate-800/90 border border-slate-700 p-8 rounded-2xl shadow-xl h-full hover:shadow-2xl hover:scale-105 transition-transform duration-300">
+        <div class="bg-yellow-400/30 p-3 rounded-full mb-5 shadow-md">
+          <svg class="w-8 h-8 text-yellow-300" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+            <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span class="text-xl font-bold text-white mb-2">Dual Jurisdiction Expertise</span>
+        <p class="text-white/80 text-base leading-relaxed">Navigating both Indian and UK legal landscapes.</p>
       </li>
-      <li class="flex items-start gap-3 bg-white/5 p-4 rounded-lg shadow-sm transition-all duration-300">
-        <svg class="w-6 h-6 text-yellow-300 flex-shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span class="text-white/90 leading-relaxed">
-          <span class="font-bold">End-to-End Service</span> – From consultation to legal execution in India.
-        </span>
+      <!-- Box 3 -->
+      <li class="flex flex-col items-start bg-slate-800/90 border border-slate-700 p-8 rounded-2xl shadow-xl h-full hover:shadow-2xl hover:scale-105 transition-transform duration-300">
+        <div class="bg-yellow-400/30 p-3 rounded-full mb-5 shadow-md">
+          <svg class="w-8 h-8 text-yellow-300" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+            <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span class="text-xl font-bold text-white mb-2">End-to-End Service</span>
+        <p class="text-white/80 text-base leading-relaxed">From consultation to legal execution in India.</p>
       </li>
     </ul>
-    
   </div>
 </section>
 
   <!-- Testimonials -->
-  <section id="testimonials" class="section section-testimonials">
+  <section id="testimonials" class="section bg-[var(--surface)]">
     <div class="container-narrow">
       <h2 class="section-title">What our <span class="accent">UK clients</span> say</h2>
 
@@ -631,7 +640,7 @@ body {
   </section>
 
   <!-- Offices -->
-  <section id="offices" class="section bg-primary-dark">
+  <section id="offices" class="section bg-[var(--surface-2)]">
     <div class="container-narrow">
       <h2 class="section-title">Our <span class="accent">Offices</span></h2>
 
