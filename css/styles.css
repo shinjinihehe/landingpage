@@ -13,7 +13,8 @@
   bottom: 10px;
   width: clamp(170px, 26vw, 210px);
   height: clamp(170px, 26vw, 210px);
-  background: url("../assets/images/graphics/pattern-circles.svg") no-repeat center/contain;
+  background: url("../assets/images/graphics/pattern-circles.svg") no-repeat
+    center/contain;
   opacity: 0.1;
   z-index: 0;
 }
@@ -22,6 +23,6 @@
   transform: translateY(0) !important;
 
   [data-nav].is-open {
-  transform: translateX(0) !important;
-}
+    transform: translateX(0) !important;
+  }
 }
