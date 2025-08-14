@@ -389,43 +389,71 @@ body {
 </nav>
 
 <main id="main">
-  <!-- Hero -->
-<section id="hero" class="section bg-[var(--blue-dark)]">
-  <div class="container-narrow grid md:grid-cols-[1.05fr_.95fr] gap-8 items-center">
-    <!-- Left: Text Content -->
-    <div class="text-center md:text-left">
-      <p class="eyebrow mb-3">
-        UK Company Registration: <strong>16609536</strong>
+ <!-- Hero -->
+<section id="hero" class="bg-[var(--blue-dark)]" aria-label="NRIs in the UK Hero">
+  <div class="mx-auto w-[min(1200px,92%)] min-h-[60vh] md:min-h-[70vh] flex items-center">
+    <div class="w-full text-center md:text-left">
+      <!-- Badge -->
+      <p class="inline-flex items-center rounded-full bg-white/5 px-4 py-1.5
+                 text-[13px] font-semibold uppercase tracking-wide text-blue-100
+                 ring-1 ring-white/10 mb-6">
+        UK Company Registration: <span class="ml-1 text-white">16609536</span>
       </p>
-      <h1 class="hero-title text-4xl md:text-5xl font-extrabold text-white mb-4">
+
+      <!-- Headline -->
+      <h1 class="mx-auto max-w-prose text-white font-extrabold tracking-tight leading-tight
+                 text-[clamp(2.5rem,6vw,4rem)] mb-4">
         NRI Legal & Advisory Services <span class="text-yellow-300">– UK Office</span>
       </h1>
-      <p class="italic text-lg text-blue-100 mb-6">
+
+      <!-- Subhead -->
+      <p class="mx-auto max-w-prose text-blue-100/90
+                text-[clamp(1rem,2.2vw,1.25rem)] mb-6">
         Your Bridge Between the UK and India’s Legal, Financial & Property Systems
       </p>
-      <p class="hero-text my-4 text-lg text-blue-100 leading-relaxed">
-        At <span class="font-bold text-white">Innerwork Advisors LLP (India)</span> and 
-        <span class="font-bold text-white">Innerwork Advisors Limited (UK)</span>, we help 
-        <span class="font-bold text-yellow-300">Non-Resident Indians (NRIs) in the UK</span> resolve India-based legal, financial, and property matters. <br>With offices in both countries, we provide 
-        <span class="font-bold text-yellow-300">face-to-face consultations in Britain</span> and 
-        <span class="font-bold text-yellow-300">on-ground representation in India</span> for prompt, lawful, and hassle-free solutions.
-      </p>
-      <div class="flex flex-wrap justify-center md:justify-start gap-3 mt-7">
-        <a class="btn btn-primary text-lg" href="#contact">Book UK Consultation</a>
-        <a class="btn btn-outline text-lg" href="tel:07941485199">Call UK: 07941 485199</a>
+
+      <!-- Body copy (two paragraphs for rhythm) -->
+      <div class="mx-auto max-w-prose text-blue-100 space-y-4">
+        <p class="text-[1.0625rem] leading-relaxed">
+          At <strong class="text-white">Innerwork Advisors LLP (India)</strong> and
+          <strong class="text-white">Innerwork Advisors Limited (UK)</strong>, we help
+          <strong class="text-yellow-300">NRIs in the UK</strong> resolve India-based legal, financial, and property matters.
+        </p>
+        <p class="text-[1.0625rem] leading-relaxed">
+          With offices in both countries, we provide
+          <strong class="text-yellow-300">face-to-face consultations in Britain</strong> and
+          <strong class="text-yellow-300">on-ground representation in India</strong>
+          for prompt, lawful, and hassle-free solutions.
+        </p>
+      </div>
+
+      <!-- CTAs -->
+      <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+        <a
+          class="inline-flex items-center justify-center rounded-xl bg-[var(--gold-contrast)]
+                 text-[var(--blue-dark)] text-[1.0625rem] font-semibold
+                 px-6 py-3 shadow-[0_6px_20px_rgba(0,0,0,0.25)]
+                 transition-transform duration-200 hover:-translate-y-0.5
+                 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-300/60"
+          href="#contact"
+          aria-label="Book UK Consultation"
+        >
+          Book UK Consultation
+        </a>
+
+        <a
+          class="inline-flex items-center justify-center rounded-xl border-2 border-[var(--gold-contrast)]
+                 text-[1.0625rem] font-semibold text-[var(--gold-contrast)]
+                 px-6 py-3 hover:bg-[var(--gold-contrast)] hover:text-[var(--blue-dark)]
+                 transition-colors duration-200
+                 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-300/60"
+          href="tel:07941485199"
+          aria-label="Call UK: 07941 485199"
+        >
+          Call UK: 07941 485199
+        </a>
       </div>
     </div>
-    <!-- Right: Image -->
-    <figure>
-      <div class="bg-[rgba(230,201,141,0.12)] border border-[rgba(230,201,141,0.18)] rounded-[18px] overflow-hidden shadow-2xl">
-        <img
-          class="w-full h-auto object-cover"
-          src="assets/images/hero/hero-team.jpg"
-          alt="Our team supporting NRIs across India and the UK"
-          loading="lazy"
-        />
-      </div>
-    </figure>
   </div>
 </section>
 
