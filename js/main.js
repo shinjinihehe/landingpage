@@ -81,3 +81,4 @@ if (toggle && nav) {
 
   window.addEventListener('scroll', onScroll, { passive: true });
 })();
+
