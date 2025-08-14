@@ -28,3 +28,32 @@ if (toggle && nav) {
     });
   });
 }
+
+// Parallax background for hero (fixed bg, lower part of image, desktop/tablet only)
+(function () {
+  var hero = document.getElementById('hero');
+  if (!hero) return;
+  var bg = hero.querySelector('.parallax-bg');
+  if (!bg) return;
+
+  // Only apply on wider viewports
+  function isDesktop() {
+    return window.matchMedia('(min-width: 769px)').matches;
+  }
+
+  // Lightweight, performant scroll handling
+  var ticking = false;
+  function onScroll() {
+    if (!isDesktop()) return;
+    if (!ticking) {
+      window.requestAnimationFrame(function () {
+        var offset = window.pageYOffset;
+        bg.style.transform = 'translateY(' + (offset * 0.25) + 'px)';
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+})();

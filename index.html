@@ -241,6 +241,12 @@ header.navbar.scrolled {
     margin-inline: auto;
   }
 
+  @media (max-width: 768px) {
+  #hero .parallax-bg {
+    background-attachment: scroll;
+  }
+}
+
   /* Testimonials */
   blockquote.testimonial {
     position: relative;
@@ -390,8 +396,17 @@ body {
 
 <main id="main">
 <!-- Hero -->
-<section id="hero" class="bg-[var(--blue-dark)] relative pt-[72px] md:pt-[88px]" aria-label="NRIs in the UK hero">
-  <div class="mx-auto w-[min(1200px,92%)] min-h-[60vh] md:min-h-[70vh] flex items-center">
+<section id="hero" class="relative bg-[var(--blue-dark)] overflow-hidden pt-[72px] md:pt-[88px]" aria-label="NRIs in the UK hero">
+  <!-- Parallax background layer (uses the lower part of the image) -->
+  <div class="parallax-bg absolute inset-0 -z-0"
+       style="background-image:url('/assets/images/hero/hero.png');
+              background-position: bottom center;
+              background-size: cover;
+              background-attachment: fixed;"
+       aria-hidden="true"></div>
+
+  <!-- Content -->
+  <div class="mx-auto w-[min(1200px,92%)] min-h-[60vh] md:min-h-[70vh] flex items-center relative z-10">
     <div class="w-full text-center md:text-left">
 
       <!-- Headline -->
@@ -442,9 +457,7 @@ body {
         </a>
       </div>
 
-      <!-- Mobile view: no registration badge (kept clean) -->
-      <!-- If you want a mobile badge later, place it here in a controlled way -->
-
+      <!-- Mobile view: registration badge remains tucked away, if needed you can add here -->
     </div>
   </div>
 
