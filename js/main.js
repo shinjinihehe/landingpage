@@ -57,3 +57,27 @@ if (toggle && nav) {
 
   window.addEventListener('scroll', onScroll, { passive: true });
 })();
+
+(function () {
+  var section = document.getElementById('services');
+  if (!section) return;
+  var bg = section.querySelector('.parallax-bg-nri');
+  if (!bg) return;
+
+  function isDesktop() { return window.matchMedia('(min-width: 769px)').matches; }
+
+  var ticking = false;
+  function onScroll() {
+    if (!isDesktop()) return;
+    if (!ticking) {
+      window.requestAnimationFrame(function () {
+        var offset = window.pageYOffset;
+        bg.style.transform = 'translateY(' + (offset * 0.25) + 'px)';
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+})();

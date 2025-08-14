@@ -490,9 +490,21 @@ body {
 </section>
 
 
-  <!-- Services -->
-  <section id="services" class="section bg-[var(--blue-dark)]">
-  <div class="container-narrow">
+<!-- Services -->
+<section id="services" class="section bg-[var(--blue-dark)] relative">
+  <!-- Parallax background (cover, not cropped bottom) -->
+  <div class="parallax-bg-nri absolute inset-0 -z-10"
+       style="background-image:url('assets/images/services/service.png');
+              background-position:center center;
+              background-size: cover;
+              background-repeat:no-repeat;
+              background-attachment: fixed;" aria-hidden="true"></div>
+
+  <!-- Optional readability overlay -->
+  <div class="parallax-overlay-nri absolute inset-0 -z-9"
+       style="background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,.25) 60%, rgba(0,0,0,.40) 100%);"></div>
+
+  <div class="container-narrow relative z-20" style="min-height:60vh;">
     <h2 class="section-title">
       Our <span class="accent">Specialized NRI Services</span>
     </h2>
@@ -509,7 +521,11 @@ body {
           <div>
             <div class="flex items-center mb-3">
               <!-- House Icon -->
-              <svg xmlns="http://www.w3.org/2000/svg" class="text-yellow-300 mr-3" width="32" height="32" fill="none" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><path d="M216,215.99316H40a8,8,0,0,1-8-8V119.99316a8,8,0,0,1,2.62793-5.92773l88-80a8,8,0,0,1,10.74414,0l88,80A8,8,0,0,1,224,119.99316v88A8,8,0,0,1,216,215.99316Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><polyline points="16 215.993 128 119.993 240 215.993" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="text-yellow-300 mr-3" width="32" height="32" fill="none" viewBox="0 0 256 256">
+                <rect width="256" height="256" fill="none"/>
+                <path d="M216,215.99316H40a8,8,0,0,1-8-8V119.99316a8,8,0,0,1,2.62793-5.92773l88-80a8,8,0,0,1,10.74414,0l88,80A8,8,0,0,1,224,119.99316v88A8,8,0,0,1,216,215.99316Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+                <polyline points="16 215.993 128 119.993 240 215.993" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+              </svg>
               <h4 class="font-bold text-yellow-300 text-lg">Property & Real Estate Solutions</h4>
             </div>
             <ul class="list-disc list-inside text-blue-100 pl-2 space-y-1">
@@ -519,12 +535,21 @@ body {
             </ul>
           </div>
         </div>
+
         <!-- Card 2 -->
         <div class="card h-full flex flex-col justify-between group transition hover:shadow-2xl">
           <div>
             <div class="flex items-center mb-3">
               <!-- Bank Icon -->
-              <svg xmlns="http://www.w3.org/2000/svg" class="text-yellow-300 mr-3" width="32" height="32" fill="none" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><polygon points="24 96 232 96 128 32 24 96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="56" y1="96" x2="56" y2="176" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="104" y1="96" x2="104" y2="176" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="152" y1="96" x2="152" y2="176" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="200" y1="96" x2="200" y2="176" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="32" y1="176" x2="224" y2="176" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="text-yellow-300 mr-3" width="32" height="32" fill="none" viewBox="0 0 256 256">
+                <rect width="256" height="256" fill="none"/>
+                <polygon points="24 96 232 96 128 32 24 96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+                <line x1="56" y1="96" x2="56" y2="176" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+                <line x1="104" y1="96" x2="104" y2="176" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+                <line x1="152" y1="96" x2="152" y2="176" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+                <line x1="200" y1="96" x2="200" y2="176" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+                <line x1="32" y1="176" x2="224" y2="176" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+              </svg>
               <h4 class="font-bold text-yellow-300 text-lg">Banking & Financial Dispute Resolution</h4>
             </div>
             <ul class="list-disc list-inside text-blue-100 pl-2 space-y-1">
@@ -533,12 +558,16 @@ body {
             </ul>
           </div>
         </div>
+
         <!-- Card 3 -->
         <div class="card h-full flex flex-col justify-between group transition hover:shadow-2xl">
           <div>
             <div class="flex items-center mb-3">
               <!-- CurrencyGbp Icon -->
-              <svg xmlns="http://www.w3.org/2000/svg" class="text-yellow-300 mr-3" width="32" height="32" fill="none" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><path d="M80,168a48,48,0,1,1,48-48H80v32h48a48,48,0,1,1-48,48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="text-yellow-300 mr-3" width="32" height="32" fill="none" viewBox="0 0 256 256">
+                <rect width="256" height="256" fill="none"/>
+                <path d="M80,168a48,48,0,1,1,48-48H80v32h48a48,48,0,1,1-48,48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+              </svg>
               <h4 class="font-bold text-yellow-300 text-lg">NRI Taxation Services</h4>
             </div>
             <ul class="list-disc list-inside text-blue-100 pl-2 space-y-1">
@@ -562,7 +591,13 @@ body {
           <div>
             <div class="flex items-center mb-3">
               <!-- Scroll Icon -->
-              <svg xmlns="http://www.w3.org/2000/svg" class="text-yellow-300 mr-3" width="32" height="32" fill="none" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><rect x="48" y="40" width="160" height="176" rx="8" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="96" y1="80" x2="160" y2="80" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="96" y1="120" x2="160" y2="120" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="96" y1="160" x2="160" y2="160" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="text-yellow-300 mr-3" width="32" height="32" fill="none" viewBox="0 0 256 256">
+                <rect width="256" height="256" fill="none"/>
+                <rect x="48" y="40" width="160" height="176" rx="8" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+                <line x1="96" y1="80" x2="160" y2="80" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+                <line x1="96" y1="120" x2="160" y2="120" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+                <line x1="96" y1="160" x2="160" y2="160" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+              </svg>
               <h4 class="font-bold text-yellow-300 text-lg">Inheritance & Succession Planning</h4>
             </div>
             <ul class="list-disc list-inside text-blue-100 pl-2 space-y-1">
@@ -571,12 +606,18 @@ body {
             </ul>
           </div>
         </div>
+
         <!-- Card 2 -->
         <div class="card h-full flex flex-col justify-between group transition hover:shadow-2xl">
           <div>
             <div class="flex items-center mb-3">
               <!-- Gavel Icon -->
-              <svg xmlns="http://www.w3.org/2000/svg" class="text-yellow-300 mr-3" width="32" height="32" fill="none" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><rect x="60" y="100" width="136" height="56" rx="8" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="128" y1="156" x2="128" y2="212" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="96" y1="212" x2="160" y2="212" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="text-yellow-300 mr-3" width="32" height="32" fill="none" viewBox="0 0 256 256">
+                <rect width="256" height="256" fill="none"/>
+                <rect x="60" y="100" width="136" height="56" rx="8" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+                <line x1="128" y1="156" x2="128" y2="212" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+                <line x1="96" y1="212" x2="160" y2="212" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+              </svg>
               <h4 class="font-bold text-yellow-300 text-lg">Criminal & Civil Litigation for NRIs</h4>
             </div>
             <ul class="list-disc list-inside text-blue-100 pl-2 space-y-1">
@@ -584,12 +625,17 @@ body {
             </ul>
           </div>
         </div>
+
         <!-- Card 3 -->
         <div class="card h-full flex flex-col justify-between group transition hover:shadow-2xl">
           <div>
             <div class="flex items-center mb-3">
               <!-- ShieldCheck Icon -->
-              <svg xmlns="http://www.w3.org/2000/svg" class="text-yellow-300 mr-3" width="32" height="32" fill="none" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><path d="M128,24,40,56V120c0,72,88,112,88,112s88-40,88-112V56Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><polyline points="172 104 113.333 160 84 132" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="text-yellow-300 mr-3" width="32" height="32" fill="none" viewBox="0 0 256 256">
+                <rect width="256" height="256" fill="none"/>
+                <path d="M128,24,40,56V120c0,72,88,112,88,112s88-40,88-112V56Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+                <polyline points="172 104 113.333 160 84 132" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+              </svg>
               <h4 class="font-bold text-yellow-300 text-lg">Consumer Protection Cases</h4>
             </div>
             <ul class="list-disc list-inside text-blue-100 pl-2 space-y-1">
@@ -597,12 +643,19 @@ body {
             </ul>
           </div>
         </div>
+
         <!-- Card 4 -->
         <div class="card h-full flex flex-col justify-between group transition hover:shadow-2xl">
           <div>
             <div class="flex items-center mb-3">
               <!-- FileText Icon -->
-              <svg xmlns="http://www.w3.org/2000/svg" class="text-yellow-300 mr-3" width="32" height="32" fill="none" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><path d="M200,224H56a8,8,0,0,1-8-8V40a8,8,0,0,1,8-8h96l56,56V216A8,8,0,0,1,200,224Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><polyline points="152 32 152 88 208 88" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="104" y1="152" x2="152" y2="152" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="104" y1="184" x2="152" y2="184" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="text-yellow-300 mr-3" width="32" height="32" fill="none" viewBox="0 0 256 256">
+                <rect width="256" height="256" fill="none"/>
+                <path d="M200,224H56a8,8,0,0,1-8-8V40a8,8,0,0,1,8-8h96l56,56V216A8,8,0,0,1,200,224Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+                <polyline points="152 32 152 88 208 88" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+                <line x1="104" y1="152" x2="152" y2="152" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+                <line x1="104" y1="184" x2="152" y2="184" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+              </svg>
               <h4 class="font-bold text-yellow-300 text-lg">Legal Documentation & Verification</h4>
             </div>
             <ul class="list-disc list-inside text-blue-100 pl-2 space-y-1">
@@ -612,8 +665,7 @@ body {
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 <!-- Why Choose Us Section -->
 <section id="why-choose-us" class="py-20 bg-gradient-to-b from-[var(--surface-2)] to-slate-900">
