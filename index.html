@@ -389,16 +389,10 @@ body {
 </nav>
 
 <main id="main">
- <!-- Hero -->
-<section id="hero" class="bg-[var(--blue-dark)]" aria-label="NRIs in the UK Hero">
+<!-- Hero -->
+<section id="hero" class="bg-[var(--blue-dark)] relative pt-[72px] md:pt-[88px]" aria-label="NRIs in the UK hero">
   <div class="mx-auto w-[min(1200px,92%)] min-h-[60vh] md:min-h-[70vh] flex items-center">
     <div class="w-full text-center md:text-left">
-      <!-- Badge -->
-      <p class="inline-flex items-center rounded-full bg-white/5 px-4 py-1.5
-                 text-[13px] font-semibold uppercase tracking-wide text-blue-100
-                 ring-1 ring-white/10 mb-6">
-        UK Company Registration: <span class="ml-1 text-white">16609536</span>
-      </p>
 
       <!-- Headline -->
       <h1 class="mx-auto max-w-prose text-white font-extrabold tracking-tight leading-tight
@@ -407,53 +401,58 @@ body {
       </h1>
 
       <!-- Subhead -->
-      <p class="mx-auto max-w-prose text-blue-100/90
-                text-[clamp(1rem,2.2vw,1.25rem)] mb-6">
+      <p class="mx-auto max-w-prose text-blue-100/90 text-[clamp(1rem,2.2vw,1.25rem)] mb-6">
         Your Bridge Between the UK and India’s Legal, Financial & Property Systems
       </p>
 
       <!-- Body copy (two paragraphs for rhythm) -->
       <div class="mx-auto max-w-prose text-blue-100 space-y-4">
         <p class="text-[1.0625rem] leading-relaxed">
-          At <strong class="text-white">Innerwork Advisors LLP (India)</strong> and
-          <strong class="text-white">Innerwork Advisors Limited (UK)</strong>, we help
-          <strong class="text-yellow-300">NRIs in the UK</strong> resolve India-based legal, financial, and property matters.
+          At <span class="font-bold text-white">Innerwork Advisors LLP (India)</span> and
+          <span class="font-bold text-white">Innerwork Advisors Limited (UK)</span>, we help
+          <span class="font-bold text-yellow-300">Non-Resident Indians (NRIs) in the UK</span>
+          resolve India-based legal, financial, and property matters.
         </p>
         <p class="text-[1.0625rem] leading-relaxed">
           With offices in both countries, we provide
-          <strong class="text-yellow-300">face-to-face consultations in Britain</strong> and
-          <strong class="text-yellow-300">on-ground representation in India</strong>
+          <span class="font-bold text-yellow-300">face-to-face consultations in Britain</span> and
+          <span class="font-bold text-yellow-300">on-ground representation in India</span>
           for prompt, lawful, and hassle-free solutions.
         </p>
       </div>
 
       <!-- CTAs -->
-      <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
-        <a
-          class="inline-flex items-center justify-center rounded-xl bg-[var(--gold-contrast)]
+      <div class="mt-8 mb-8 flex flex-wrap justify-center gap-3 sm:gap-4">
+        <a class="inline-flex items-center justify-center rounded-xl bg-[var(--gold-contrast)]
                  text-[var(--blue-dark)] text-[1.0625rem] font-semibold
                  px-6 py-3 shadow-[0_6px_20px_rgba(0,0,0,0.25)]
                  transition-transform duration-200 hover:-translate-y-0.5
                  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-300/60"
-          href="#contact"
-          aria-label="Book UK Consultation"
-        >
+           href="#contact" aria-label="Book UK Consultation">
           Book UK Consultation
         </a>
 
-        <a
-          class="inline-flex items-center justify-center rounded-xl border-2 border-[var(--gold-contrast)]
+        <a class="inline-flex items-center justify-center rounded-xl border-2 border-[var(--gold-contrast)]
                  text-[1.0625rem] font-semibold text-[var(--gold-contrast)]
                  px-6 py-3 hover:bg-[var(--gold-contrast)] hover:text-[var(--blue-dark)]
                  transition-colors duration-200
                  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-300/60"
-          href="tel:07941485199"
-          aria-label="Call UK: 07941 485199"
-        >
+           href="tel:07941485199" aria-label="Call UK: 07941 485199">
           Call UK: 07941 485199
         </a>
       </div>
+
+      <!-- Mobile view: no registration badge (kept clean) -->
+      <!-- If you want a mobile badge later, place it here in a controlled way -->
+
     </div>
+  </div>
+
+  <!-- Desktop badge: top-right corner (desktop only) -->
+  <div class="hidden md:flex md:absolute md:top-6 md:right-6 z-40 pointer-events-none">
+    <span class="rounded-full bg-white/5 px-4 py-2 text-[13px] font-semibold uppercase text-blue-100 ring-1 ring-white/10">
+      UK Company Registration: <span class="ml-1 text-white">16609536</span>
+    </span>
   </div>
 </section>
 
